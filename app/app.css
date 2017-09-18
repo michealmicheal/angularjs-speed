@@ -1,25 +1,15 @@
 /* app css stylesheet */
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+li {
+    font-size: large;
 }
 
-.menu:before {
-  content: "[";
+panel-heading {
+   font-size: x-large; 
 }
-
-.menu:after {
-  content: "]";
+thead {
+    color: #337AB7;
+    /*color:#36009b;*/
 }
-
-.menu > li {
-  display: inline;
-}
-
-.menu > li + li:before {
-  content: "|";
-  padding-right: 0.3em;
+tbody {
+    color: #404040;
 }

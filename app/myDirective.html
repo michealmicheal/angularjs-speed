@@ -1,0 +1,50 @@
+<h1>{{pageTitle}}</h1>
+<div class = 'panel panel-primary'>
+    <div class = 'panel-heading'>
+        <div>{{eventTitle}}</div>
+    </div>
+    
+    <div class = 'table-responsive'>
+        <table class = 'table'>
+            <thead>
+                <tr>
+                    <th>
+                        <button class = 'btn btn-primary' ng-click = 'toggleImage()'>
+                            {{showImage ? 'Hide':'Show'}} Images
+                        </button>
+                    </th>
+                    <th>Event</th>
+                    <th>Code</th>
+                    <th>Date</th>
+                    <th>Fee</th>
+                    <th>Rating</th>
+                    <th>Map</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat = 'event in events'>
+                    <td>
+                        <img ng-src = '{{event.imageUrl}}'
+                        ng-attr-title = '{{event.name}}'
+                        ng-style = "{'width': imageWidth+'px', 'margin': imageMargin+'px'}"
+                        ng-if = 'showImage'>
+                    </td>
+                    <td>{{event.name}}</td>
+                    <td>{{event.code | lowercase}}</td>
+                    <td>{{event.date}}</td>
+                    <td>{{event.fee | currency:'€':2}}</td> <!--not formatting money-->
+                    <td>
+                        {{event.rating}}
+                    </td>
+                    <td>
+                        <div ng-init = 'changeCenter()' ng-hide = '!showImage'>
+                            <ng-map style='width:300px;height:200px;' zoom = '8' center="[{{latitude}}, {{longitude}}]"></ng-map>
+                            <div>{{latitude}},{{longitude}}</div>
+                        </div>
+                        {{showImage ? '':'asdf'}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
