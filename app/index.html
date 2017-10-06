@@ -22,22 +22,19 @@
 </head>
 
 <body>
-
-  <!-- In production use:-->
-  <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>-->
   
-  <script src="bower_components/angular/angular.js"></script>
+  <div ng-view>Loading...</div>
+  
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <!--<script src="bower_components/angular/angular.js"></script>-->
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/ngmap/build/scripts/ng-map.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA34oJsKNKc1qiICs7CJOp8Pobxky_OSRI"
     type="text/javascript"></script>
   <script src="app.js"></script>
+  <script src="view/view.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
-  
-  <div ng-app="myApp" ng-controller="myCtrl">
-    <my-directive></my-directive>
-  </div>
 </body>
 </html>
